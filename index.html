@@ -116,14 +116,15 @@
     <script>
         document.addEventListener("click", function (e) {
             if (e.target.id == "encrypt-btn") {
-                var ptext = document.getElementById("plain-text").value;
+<button class='warning'>Warning</button>
+                var ptext = document.getElementById("input-text").value;
                 var key = document.getElementById("key").value;
-                document.getElementById("cypher-text").value = encrypt(ptext, key);
+                document.getElementById("output-text").value = encrypt(ptext, key);
             }
             if (e.target.id == "decrypt-btn") {
-                var ctext = document.getElementById("cypher-text").value;
+                var ctext = document.getElementById("input-text").value;
                 var key = document.getElementById("key").value;
-                document.getElementById("plain-text").value = decrypt(ctext, key);
+                document.getElementById("output-text").value = decrypt(ctext, key);
             }
         });
     </script>
@@ -147,14 +148,17 @@
 
     <div class="wrapper">
         <h1>Vigenère Cipher Tool</h1>
-
+        
+        <a href="crack.html" title="Vigenere cracker">
+            <button class='warning'>Don't know the key? Click here</button>
+        </a>
         <textarea id="key" rows="1" placeholder="key"></textarea>
-        <textarea id="plain-text" rows="5" placeholder="Plain text"></textarea>
+        <textarea id="input-text" rows="5" placeholder="Input text"></textarea>
         <div>
             <button id="encrypt-btn"><i class="bi bi-arrow-down-short"></i>Encrypt</button>
-            <button id="decrypt-btn"><i class="bi bi-arrow-up-short"></i>Decrypt</button>
+            <button id="decrypt-btn"><i class="bi bi-arrow-down-short"></i>Decrypt</button>
         </div>
-        <textarea id="cypher-text" rows="5" placeholder="Cypher text"></textarea>
+        <textarea id="output-text" rows="5" placeholder="Output", disabled></textarea>
         <div class="readmore">
             <a href="https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/Vig-Intro.html"
                 target="_blank">Read
