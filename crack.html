@@ -175,44 +175,54 @@
 
         <textarea id="input-text" rows="5" placeholder="Input text"></textarea>
 
-        <div>
-            <label for="seq-len">Sequence length:</label>
-            <input type="number" id="seq-len" min="2" step="1" value="3"></input>
-            <button id="kasiski-run-btn">Find key length</button>
-            </button>
-        </div>
+        <div class="tabs two" style="text-align: center;">
+            <input id='tab-1' type='radio' name='tabgroupB' checked />
+            <label class="pseudo button toggle" for="tab-1">1. Find key length</label> /
+            <input id='tab-2' type='radio' name='tabgroupB'>
+            <label class="pseudo button toggle" for="tab-2">2. Find key</label>
+            <div class="row">
+                <div>
+                    <div>
+                        <label for="seq-len">Sequence length:</label>
+                        <input type="number" id="seq-len" min="2" step="1" value="3"></input>
+                        <button id="kasiski-run-btn">Find key length</button>
+                        </button>
+                    </div>
 
-        <div style="max-height: 250px; overflow-y: scroll; width: fit-content;">
-            <table id="kasiski-res-table" class="primary" style="margin: 0 auto;" hidden>
-                <thead>
-                    <tr>
-                        <th>Key length</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
+                    <div style="max-height: 320px; overflow-y: scroll; width: fit-content; margin: auto;">
+                        <table id="kasiski-res-table" class="primary" style="margin: 0 auto;" hidden>
+                            <thead>
+                                <tr>
+                                    <th>Key length</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="key-len">Key length:</label>
+                        <input type="number" id="key-len" min="2" step="1"></input>
+                        <button id="key-run-btn">Find keys</button>
+                    </div>
 
-        <div>
-            <label for="key-len">Key length:</label>
-            <input type="number" id="key-len" min="2" step="1"></input>
-            <button id="key-run-btn">Find keys</button>
+                    <div style="max-height: 320px; overflow-y: scroll; width: fit-content; margin: auto">
+                        <table id="key-res-table" class="primary" style="margin: 0 auto;" hidden>
+                            <thead>
+                                <tr>
+                                    <th>Key</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div style="max-height: 400px; overflow-y: scroll; width: fit-content;">
-            <table id="key-res-table" class="primary" style="margin: 0 auto;" hidden>
-                <thead>
-                    <tr>
-                        <th>Key</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-
     </div>
 </body>
 
